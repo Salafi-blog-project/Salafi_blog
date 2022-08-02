@@ -24,8 +24,8 @@ const Card = ({ img1, subtitle, title, date, name }) => {
 export default Card;
 
 const CardComponent = styled.div`
-  margin: 3rem;
   border-top: 0.1rem solid #ebf2fe;
+  margin: 2rem 0rem 6rem 1rem;
   width: 60vw;
   height: 20vh;
   display: flex;
