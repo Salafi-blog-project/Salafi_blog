@@ -1,26 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../../color";
 
-const Card = () => {
+const Card = ({ img1, subtitle, title, date, name }) => {
   return (
     <CardComponent>
       <DetailsContainer className="p-5">
-        <div className="flex justify-between">
-          <div>Design tools</div>
-          <div>AUGust 13, 2021 </div>
+        <div className="flex gap-2 py-2">
+          <div className="p-2 rounded-md bg-lightblue">{name} </div>
+          <div className="p-2">{date} </div>
         </div>
-        <div className="gap-y-3">
-          <div className="text-left	">
-            10 Hilarious Cartoons That Depict Real-Life Problems of Programmers
-          </div>
-          <div className="text-left	">
-            Redefined the user acquisition and redesigned the onboarding
-            experience, all within 3 working weeks.
-          </div>
+        <div>
+          <div className="text-left	py-2 font-bold">{title}</div>
+          <div className="text-left	py-2 font-normal">{subtitle}</div>
         </div>
       </DetailsContainer>
-      <div>2</div>
+      <div className="py-4">
+        <img src={img1} alt="" />
+      </div>
     </CardComponent>
   );
 };
@@ -28,8 +24,9 @@ const Card = () => {
 export default Card;
 
 const CardComponent = styled.div`
-  border-bottom: 0.1rem solid;
-  width: 70vw;
+  margin: 3rem;
+  border-top: 0.1rem solid #ebf2fe;
+  width: 60vw;
   height: 20vh;
   display: flex;
 `;
