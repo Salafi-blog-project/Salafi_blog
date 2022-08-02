@@ -6,7 +6,7 @@ const Card = () => {
   return (
     <CardComponent>
       <DetailsContainer className="p-5">
-        <div className="flex justify-between ">
+        <div className="flex justify-between">
           <div>Design tools</div>
           <div>AUGust 13, 2021 </div>
         </div>
@@ -20,7 +20,6 @@ const Card = () => {
           </div>
         </div>
       </DetailsContainer>
-
       <div>2</div>
     </CardComponent>
   );
@@ -29,14 +28,13 @@ const Card = () => {
 export default Card;
 
 const CardComponent = styled.div`
+  border-bottom: 0.1rem solid;
   width: 70vw;
   height: 20vh;
   display: flex;
-  padding: 5rem;
 `;
 
 const DetailsContainer = styled.div`
-  background-color: ${colors.deepblue};
   width: 70%;
   height: 200px;
 `;
