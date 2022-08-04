@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = ({ img1, subtitle, title, date, name }) => {
+const Card = ({ img, subtitle, title, date, name }) => {
   return (
     <CardComponent>
       <DetailsContainer className="p-5">
@@ -15,7 +15,7 @@ const Card = ({ img1, subtitle, title, date, name }) => {
         </div>
       </DetailsContainer>
       <div className="py-4">
-        <img src={img1} alt="" />
+        <img src={img} alt="" />
       </div>
     </CardComponent>
   );
