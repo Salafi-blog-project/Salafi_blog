@@ -1,10 +1,9 @@
 import "./App.css";
 import Card from "./constants/components/cards/card";
-import image1 from "./assets/room_card.svg";
 import { useState } from "react";
 import HeroSection from "./constants/components/hero/hero";
 import FooterSection from "./constants/components/footer/footer";
-import { Room, Dining, Flower } from "./image.js";
+import { Room, Dining, Flower } from "../src/constants/components/image";
 
 function App() {
   const [cards, setCard] = useState([
@@ -46,7 +45,7 @@ function App() {
           <Card
             key={card.id}
             id={card.id}
-            img1={image1}
+            img={card.img}
             subtitle={card.subtitle}
             title={card.title}
             date={card.date}
