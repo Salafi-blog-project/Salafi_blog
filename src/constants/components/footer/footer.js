@@ -12,7 +12,7 @@ const FooterSection = ({ subscribe, content }) => {
           <input type="text" className="p-2 rounded-l" />
         </div>
         <div className="cursor-pointer bg-green-300 p-2 px-5 rounded-r">
-          button
+          subscribe
         </div>
       </FormButtonContainer>
     </FooterContainer>
