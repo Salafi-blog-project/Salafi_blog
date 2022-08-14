@@ -4,6 +4,7 @@ import { useState } from "react";
 import HeroSection from "./constants/components/hero/hero";
 import FooterSection from "./constants/components/footer/footer";
 import { Room, Dining, Flower } from "../src/constants/components/image";
+import CardDetails from "./constants/pages/carddetails";
 
 function App() {
   const [cards, setCard] = useState([
@@ -57,6 +58,7 @@ function App() {
         subscribe="Subscribe to my blog."
         content="I post fresh content every week."
       />
+      <CardDetails/>
     </div>
   );
 }
