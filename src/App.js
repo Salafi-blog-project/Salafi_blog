@@ -1,5 +1,6 @@
 import "./App.css";
 import Card from "./constants/components/cards/card";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import { useState } from "react";
 import HeroSection from "./constants/components/hero/hero";
 import FooterSection from "./constants/components/footer/footer";
