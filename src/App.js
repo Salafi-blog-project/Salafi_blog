@@ -6,6 +6,7 @@ import HeroSection from "./components/hero/hero";
 import FooterSection from "./components/footer/footer";
 import { Room, Dining, Flower } from "../src/components/image";
 import CardDetails from "./pages/carddetails";
+import Subscribe from "./pages/subscribe";
 
 function App() {
   const [cards, setCard] = useState([
@@ -40,8 +41,8 @@ function App() {
   ]);
 
   return (
-    <BrowserRouter>
-      <div className="flex justify-center items-center flex-col my-1">
+    <div className="flex justify-center items-center flex-col my-1">
+        <BrowserRouter>
         <HeroSection />
         <div>
           {cards.map((card) => (
@@ -60,13 +61,15 @@ function App() {
           subscribe="Subscribe to my blog."
           content="I post fresh content every week."
         />
-        <Switch>
-          <Route>
-            <CardDetails />
-          </Route>
-        </Switch>
-      </div>
+        <Routes>
+          <Route path="/carddetails" element={<CardDetails />}/>            
+          <Route path="/subscribe" element={<Subscribe />}/> 
+          <Route path="/test" element={(
+            <div>test page</div>
+          )}  />
+        </Routes>
     </BrowserRouter>
+      </div>
   );
 }
 
