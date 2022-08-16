@@ -1,11 +1,12 @@
 import "./App.css";
-import Card from "./constants/components/cards/card";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import Card from "./components/cards/card";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import HeroSection from "./constants/components/hero/hero";
-import FooterSection from "./constants/components/footer/footer";
-import { Room, Dining, Flower } from "../src/constants/components/image";
-import CardDetails from "./constants/pages/carddetails";
+import HeroSection from "./components/hero/hero";
+import FooterSection from "./components/footer/footer";
+import { Room, Dining, Flower } from "../src/components/image";
+import CardDetails from "./pages/carddetails";
+import Subscribe from "./pages/subscribe";
 
 function App() {
   const [cards, setCard] = useState([
@@ -41,26 +42,34 @@ function App() {
 
   return (
     <div className="flex justify-center items-center flex-col my-1">
-      <HeroSection />
-      <div>
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            id={card.id}
-            img={card.img}
-            subtitle={card.subtitle}
-            title={card.title}
-            date={card.date}
-            name={card.name}
-          />
-        ))}
+        <BrowserRouter>
+        <HeroSection />
+        <div>
+          {cards.map((card) => (
+            <Card
+              key={card.id}
+              id={card.id}
+              img={card.img}
+              subtitle={card.subtitle}
+              title={card.title}
+              date={card.date}
+              name={card.name}
+            />
+          ))}
+        </div>
+        <FooterSection
+          subscribe="Subscribe to my blog."
+          content="I post fresh content every week."
+        />
+        <Routes>
+          <Route path="/carddetails" element={<CardDetails />}/>            
+          <Route path="/subscribe" element={<Subscribe />}/> 
+          <Route path="/test" element={(
+            <div>test page</div>
+          )}  />
+        </Routes>
+    </BrowserRouter>
       </div>
-      <FooterSection
-        subscribe="Subscribe to my blog."
-        content="I post fresh content every week."
-      />
-      <CardDetails/>
-    </div>
   );
 }
 
