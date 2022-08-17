@@ -3,8 +3,10 @@ import React from "react";
 const CardDetails = ({url}) => {
     return (  
     <div>
-        <img src={url} alt=""/>
-        <p>wewe</p>
+        <img src="../assets/details_image.png" alt=""/>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
     );
 }
