@@ -1,10 +1,7 @@
 import "./App.css";
-import Card from "./components/cards/card";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import HeroSection from "./components/hero/hero";
 import FooterSection from "./components/footer/footer";
-import { Room, Dining, Flower } from "../src/components/image";
 import CardDetails from "./pages/carddetails";
 import Subscribe from "./pages/subscribe";
 import HomePage from "./pages/home";
