@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import{Link} from "react-router-dom"
 
 const Card = ({ img, subtitle, title, date, name }) => {
   return (
@@ -12,6 +13,8 @@ const Card = ({ img, subtitle, title, date, name }) => {
         <div>
           <div className="text-left	py-2 font-bold">{title}</div>
           <div className="text-left	py-2 font-normal">{subtitle}</div>
+          
+          <Link to="/carddetails">Read more ...</Link>
         </div>
       </DetailsContainer>
       <div className="py-4">

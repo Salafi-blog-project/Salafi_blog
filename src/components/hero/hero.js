@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../constants/color";
 
@@ -6,16 +7,16 @@ const HeroSection = () => {
   return (
     <HeroSectionContainer>
       <div className="flex justify-between p-7">
-        <div className="text-white">Salafi Blog</div>
+        <Link to="/" className="text-white">Salafi Blog</Link>
         <MiddleContainer className="text-white">
           <div>Design Tools</div>
           <div>Daily Updates</div>
           <div>Tutorials</div>
           <div>Library</div>
         </MiddleContainer>
-        <div className="text-white w-22 rounded-md cursor-pointer h-7 px-2 bg-slate-500">
+        <Link to="/subscribe" className="text-white w-22 rounded-md cursor-pointer h-7 px-2 bg-slate-500">
           Subscribe
-        </div>
+        </Link>
       </div>
       <div className="flex justify-center items-center flex-col font-bold	text-white ">
         <div className="text-left	">As-Salaam Alaikum</div>
