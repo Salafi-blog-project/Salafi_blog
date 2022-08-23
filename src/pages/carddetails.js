@@ -1,11 +1,15 @@
 import React from "react";
+import image_one from "../assets/details_image.png";
+import image_two from "../assets/details_image2.png";
 
 const CardDetails = () => {
   return (
     <div>
-      <img src="../assets/detils_image.png" alt="img1" />
-      <div className="p-20 px-48">
-        <p className="py-3">
+      <div className=" p-4">
+        <img src={image_one} alt="img1" />
+      </div>
+      <div className="p-10 px-48">
+        <p>
           Design comps, layouts, wireframes—will your clients accept that you go
           about things the facile way? Authorities in our business will tell in
           no uncertain terms that Lorem Ipsum is that huge, huge no no to
@@ -24,11 +28,11 @@ const CardDetails = () => {
           bread?
         </p>
       </div>
-      <div>
-        <img src="" alt="img2" />
+      <div flex className="flex justify-center items-center">
+        <img src={image_two} alt="img2" />
       </div>
       <div className="py-4 px-48">
-        <p>
+        <p className="py-3">
           The toppings you may chose for that TV dinner pizza slice when you
           forgot to shop for foods, the paint you may slap on your face to
           impress the new boss is your business. But what about your daily
