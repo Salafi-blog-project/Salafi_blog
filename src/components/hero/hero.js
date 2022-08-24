@@ -11,7 +11,7 @@ const HeroSection = () => {
         <MiddleContainer className="text-white">
           <div>Design Tools</div>
           <div>Daily Updates</div>
-          <div>Tutorials</div>
+          <Link to="/tutorials">Tutorials</Link>
           <div>Library</div>
         </MiddleContainer>
         <Link to="/subscribe" className="text-white w-22 rounded-md cursor-pointer h-7 px-2 bg-slate-500">

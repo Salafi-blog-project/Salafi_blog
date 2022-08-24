@@ -4,6 +4,7 @@ import HeroSection from "./components/hero/hero";
 import FooterSection from "./components/footer/footer";
 import CardDetails from "./pages/carddetails";
 import Subscribe from "./pages/subscribe";
+import Tutorials from "./pages/tutorials";
 import HomePage from "./pages/home";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<HomePage/>}/>
           <Route path="/blog/:slug" element={<CardDetails />}/>            
           <Route path="/subscribe" element={<Subscribe />}/> 
+          <Route path="/tutorials" element={<Tutorials/>}/>
           <Route path="/test" element={(
             <div>test page</div>
           )}/>
