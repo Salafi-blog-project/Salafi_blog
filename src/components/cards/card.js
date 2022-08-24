@@ -14,7 +14,7 @@ const Card = ({ img, subtitle, title, date, name }) => {
           <div className="text-left	py-2 font-bold">{title}</div>
           <div className="text-left	py-2 font-normal">{subtitle}</div>
           
-          <Link to="/carddetails">Read more ...</Link>
+          <Link to={`/blog/${title}`}>Read more ...</Link>
         </div>
       </DetailsContainer>
       <div className="py-4">
