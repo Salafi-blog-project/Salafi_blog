@@ -8,7 +8,7 @@ const [images, setImage] = useState(blogimages)
 
   return <div>
     {images.map((image) => (
-      <div>
+      <div className="">
         <img src={image} alt="image"/>
       </div>
     ))}
