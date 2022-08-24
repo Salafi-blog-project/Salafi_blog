@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import image_one from "../assets/details_image.png";
 import image_two from "../assets/details_image2.png";
+import { blogdata } from "./blogdata";
 
 const CardDetails = () => {
+  const {slug} = useParams();
+  const [blog, setBlog]=useState([])
+
+  useEffect(()=>{
+    const item = blogdata.filter((it)=> it.title === slug)
+    setBlog(item)
+    console.log(blog);
+  },[])
+
   return (
     <div>
       <div className=" p-4">

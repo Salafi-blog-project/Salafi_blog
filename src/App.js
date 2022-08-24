@@ -15,11 +15,11 @@ function App() {
         <HeroSection />        
         <Routes>
           <Route path='/' element={<HomePage/>}/>
-          <Route path="/carddetails" element={<CardDetails />}/>            
+          <Route path="/blog/:slug" element={<CardDetails />}/>            
           <Route path="/subscribe" element={<Subscribe />}/> 
           <Route path="/test" element={(
             <div>test page</div>
-          )}  />
+          )}/>
         </Routes>
         <FooterSection
           subscribe="Subscribe to my blog."
