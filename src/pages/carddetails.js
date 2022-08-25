@@ -6,13 +6,15 @@ import { blogdata } from "./blogdata";
 
 const CardDetails = () => {
   const {slug} = useParams();
-  const [blog, setBlog]=useState([])
+  const [blog, setBlog]= useState([])
+  console.log({slug});
 
-  useEffect(()=>{
-    const item = blogdata.filter((it)=> it.title === slug)
-    setBlog(item)
-    console.log(blog);
-  },[])
+  useEffect(() => {
+    let item = blogdata.filter((it)=> slug === it.title)
+    console.log({item});
+    setBlog(item);
+    console.log({blog});
+  },[slug])
 
   return (
     <div>
