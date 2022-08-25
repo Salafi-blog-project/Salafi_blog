@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from "react";
 import Card from "../components/cards/card";
 import { blogdata } from './blogdata';
 
 
 const HomePage = () => {
-
-    const [cards, setCard] = useState(blogdata);
+    const [cards, setCard] = useState([]);
+    useEffect(()=>{
+      setCard(blogdata)
+    },[])
     return (
-<div>
+        <div>
           {cards.map((card) => (
             <Card
               key={card.id}
