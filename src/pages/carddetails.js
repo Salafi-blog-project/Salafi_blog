@@ -6,21 +6,22 @@ import { blogdata } from "./blogdata";
 
 const CardDetails = () => {
   const {slug} = useParams();
-  const [blog, setBlog]= useState([])
+  const [blog, setBlog]= useState(blogdata?.find(({title})=> slug === title))
   console.log({slug});
 
-  useEffect(() => {
-    let item = blogdata.filter((it)=> slug === it.title)
-    console.log({item});
-    setBlog(item);
+  // useEffect(() => {
+  //   let item = blogdata.filter((it)=> slug === it.title)
+  //   console.log({item});
+  //   setBlog(item);
     console.log({blog});
-  },[slug])
+  // },[slug])
 
   return (
     <div>
       <div className=" p-4">
         <img src={image_one} alt="img1" />
       </div>
+      
       <div className="p-10 px-48">
         <p>
           Design comps, layouts, wireframes—will your clients accept that you go
