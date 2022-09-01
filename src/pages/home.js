@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from "react";
 import Card from "../components/cards/card";
+import Postlist from '../components/postlist';
 import { blogdata } from './blogdata';
 
 
@@ -22,6 +23,7 @@ const HomePage = () => {
               name={card.name}
             />
           ))}
+          <Postlist/>
         </div>
     );
 }
