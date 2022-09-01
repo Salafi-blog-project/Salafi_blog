@@ -3,6 +3,7 @@ import styled from "styled-components";
 import{Link} from "react-router-dom"
 
 const Card = ({ img, subtitle, title, date, name,id }) => {
+  console.log(Card)
   return (
     <CardComponent>
       <DetailsContainer className="p-5">
