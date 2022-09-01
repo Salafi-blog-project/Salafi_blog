@@ -26,5 +26,3 @@ export const blogdata = [
       subtitle: "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working.",
     },
   ]
-
-  console.log(blogdata)
