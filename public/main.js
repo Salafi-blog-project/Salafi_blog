@@ -47,7 +47,7 @@ const getPosts =  () => {
                     title: metadata.title ? metadata.title : "No title given",
                     author: metadata.author ? metadata.title : "No author given",
                     date: metadata.date ? metadata.date : "No date given",
-                    content: metadata.content ? metadata.date : "No content given",
+                    content: content ? content : "No content given",
                 }
                 postlist.push(post)
                 if (i === files.length - 1) {
