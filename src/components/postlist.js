@@ -1,6 +1,6 @@
 import React from 'react';
 import postlist from "../posts.json"
-import Markdown from 'react-markdown';
+import reactMarkdown from 'react-markdown';
 
 const Postlist = () => {
     console.log(postlist)
@@ -13,6 +13,7 @@ const Postlist = () => {
                     <div>{post.title}</div>
                     <div>published on {post.date} by {post.author}</div>
                     <div>{post.content}</div>
+                    <reactMarkdown source={post.content} />
                 </div>
             )
         })}
