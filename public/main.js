@@ -28,7 +28,6 @@ const getPosts =  () => {
                         metadata.forEach(line => {
                             obj[line.split(": ")[0]] = line.split(": ")[1]
                         })
-                        // console.log(obj)
                         return obj
                     }
                 }
@@ -42,6 +41,9 @@ const getPosts =  () => {
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
                 const metadata = parseMetadata({lines, metadataIndices})
                 const content = parseContent({lines, metadataIndices})
+                const date = new Date(metadata.date)
+                const timestamp = date.getTime() / 1000
+                console.log(timestamp);
                 post = {
                     id: i+1,
                     title: metadata.title ? metadata.title : "No title given",
