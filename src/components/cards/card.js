@@ -1,8 +1,10 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
-import{Link} from "react-router-dom"
+// import{Link} from "react-router-dom"
 
-const Card = ({ img, subtitle, title, date, name,id }) => {
+const Card = ({ image, subtitle, title, date, name, content }) => {
+
   return (
     <CardComponent>
       <DetailsContainer className="p-5">
@@ -13,12 +15,13 @@ const Card = ({ img, subtitle, title, date, name,id }) => {
         <div>
           <div className="text-left	py-2 font-bold">{title}</div>
           <div className="text-left	py-2 font-normal">{subtitle}</div>
-          
-          <Link to={`/blog/${title}`}>Read more ...</Link>
+          <ReactMarkdown children={content} />
+          {/* <Link to={`/blog/${title}`}>Read more ...</Link> */}
+          <div>Read more ...</div>
         </div>
       </DetailsContainer>
       <div className="py-4">
-        <img src={img} alt="" />
+        <img src={image} alt="" />
       </div>
     </CardComponent>
   );
