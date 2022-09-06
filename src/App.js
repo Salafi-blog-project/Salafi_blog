@@ -6,7 +6,6 @@ import CardDetails from "./pages/carddetails";
 import Subscribe from "./pages/subscribe";
 import Tutorials from "./pages/tutorials";
 import HomePage from "./pages/home";
-import About from "./pages/about";
 
 function App() {
  
@@ -20,7 +19,6 @@ function App() {
           <Route path="/blog/:slug" element={<CardDetails />}/>            
           <Route path="/subscribe" element={<Subscribe />}/> 
           <Route path="/tutorials" element={<Tutorials/>}/>
-          <Route path="/about" element={<About/>}/>
           <Route path="/test" element={(
             <div>test page</div>
           )}/>
