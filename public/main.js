@@ -43,12 +43,16 @@ const getPosts =  () => {
                 const content = parseContent({lines, metadataIndices})
                 const date = new Date(metadata.date)
                 const timestamp = date.getTime() / 1000
+                // const random = Math.floor(Math.random() * 11)
                 console.log(timestamp);
+                // console.log(random);
+
                 post = {
-                    id: i+1,
+                    id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
                     author: metadata.author ? metadata.author : "No author given",
                     date: metadata.date ? metadata.date : "No date given",
+                    image: metadata.image ? metadata.image : "No image given",
                     content: content ? content : "No content given",
                 }
                 postlist.push(post)

@@ -1,9 +1,9 @@
 ---
-name: Sunnah
-author: Abuu Kawthar
-date: MAY 3, 2021
-title: The Salafi Manhaj
-image: ./images/dining_card.svg
+name: Athar
+author: As-Salafii
+date: MAY 1, 2021
+title: Tafsiir
+image: ./images/room_card.svg
 
 ---
 

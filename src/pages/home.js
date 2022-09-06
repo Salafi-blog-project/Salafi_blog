@@ -1,30 +1,27 @@
 import React, { useEffect } from 'react';
-import { useState } from "react";
 import Card from "../components/cards/card";
-import Postlist from '../components/postlist';
-import { blogdata } from './blogdata';
-
+import postlist from "../posts.json"
 
 const HomePage = () => {
-    const [cards, setCard] = useState([]);
-    useEffect(()=>{
-      setCard(blogdata)
-    },[])
+
+    const excerptList = postlist.map((post) => {
+      return post.content.split(" ").slice(0, 10).join(" ")
+  })
+  console.log(excerptList)
+
     return (
-        // <div>
-        //   {cards.map((card) => (
-        //     <Card
-        //       key={card.id}
-        //       id={card.id}
-        //       img={card.img}
-        //       subtitle={card.subtitle}
-        //       title={card.title}
-        //       date={card.date}
-        //       name={card.name}
-        //     />
-        //   ))}
-          <Postlist/>
-        // </div>
+        <div>
+          {postlist.map((post, i) => (
+            <Card
+              id={post.id}
+              image={post.image}
+              content={excerptList[i]}
+              title={post.title}
+              date={post.date}
+              name={post.name}
+            />
+          ))}
+         </div>
     );
 }
  
