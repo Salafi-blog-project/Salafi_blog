@@ -9,12 +9,24 @@ image: ./images/flower.svg
 
 # This is a blog post
 
-`this ia a beautiful post`
+# A demo of `react-markdown`
 
-I'm baby seitan ennui iPhone ascot vape, praxis succulents sartorial. Leggings vegan portland tousled put a bird on it. Migas pabst pickled enamel pin. Offal PBR&B banjo occupy church-key literally bodega boys williamsburg microdosing ugh VHS selvage.
+`react-markdown` is a markdown component for React.
 
-## Another header
+👉 Changes are re-rendered as you type.
 
-Paleo tumeric church-key XOXO raclette shaman next level. > Trust fund pork belly banjo PBR&B brunch food truck. La croix literally bespoke hexagon franzen tumeric poutine food truck 
+👈 Try writing some markdown on the left.
 
-*A beautiful blog*
+## Overview
+
+* Follows [CommonMark](https://commonmark.org)
+* Optionally follows [GitHub Flavored Markdown](https://github.github.com/gfm/)
+* Renders actual React elements instead of using `dangerouslySetInnerHTML`
+* Lets you define your own components (to render `MyHeading` instead of `h1`)
+* Has a lot of plugins
+
+## Table of contents
+
+Here is an example of a plugin in action
+([`remark-toc`](https://github.com/remarkjs/remark-toc)).
+This section is replaced by an actual table of contents.
