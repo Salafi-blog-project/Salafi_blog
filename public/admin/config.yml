@@ -7,9 +7,9 @@ media_folder: "public/images/uploads"
 public_folder: "/images"
 
 collections:
-  - name: "content" # Used in routes, e.g., /admin/collections/blog
+  - name: "contents" # Used in routes, e.g., /admin/collections/blog
     label: "Blog content" # Used in the UI
-    folder: "content" # The path to the folder where the documents are stored
+    folder: "src/contents" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
