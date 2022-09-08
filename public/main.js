@@ -7,7 +7,7 @@ let postlist = []
 
 const getPosts =  () => {
      fs.readdir(dirPath, (err, files) => {
-        console.log("there are" + files.length + "files")
+        // console.log("there are" + files.length + "files")
         if (err) {
             return console.log("Failed to list contents of directory: " + err)
         }
