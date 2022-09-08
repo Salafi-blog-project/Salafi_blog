@@ -2,7 +2,7 @@ const path = require("path")
 const fs = require("fs")
 const { log } = require("console")
 
-const dirPath = path.join(__dirname, "../src/content")
+const dirPath = path.join(__dirname, "../src/contents")
 let postlist = []
 
 const getPosts =  () => {
