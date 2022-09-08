@@ -1,24 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import image_one from "../assets/details_image.png";
-import image_two from "../assets/details_image2.png";
-import { blogdata } from "./blogdata";
+import postlist from "../posts.json"
 
 const CardDetails = () => {
   const {slug} = useParams();
-  const [blog, setBlog]= useState(blogdata?.find(({title})=> slug === title))
-  console.log({slug});
+  const post = postlist.find((item) => slug === (item.id).toString())
+  console.log('ONE POST',post)
 
   // useEffect(() => {
-  //   let item = blogdata.filter((it)=> slug === it.title)
-  //   console.log({item});
-  //   setBlog(item);
-    console.log({blog});
-  // },[slug])
+    
+  // }, [post])
+
 
   return (
     <div>
-      <div className=" p-4">
+      <div>{post.title}</div>
+      <div>{post.content}</div>
+      {/* <div className=" p-4">
         <img src={image_one} alt="img1" />
       </div>
       
@@ -60,7 +58,7 @@ const CardDetails = () => {
           no uncertain terms that Lorem Ipsum is that huge, huge no no to
           forswear forever.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

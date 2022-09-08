@@ -43,9 +43,7 @@ const getPosts =  () => {
                 const content = parseContent({lines, metadataIndices})
                 const date = new Date(metadata.date)
                 const timestamp = date.getTime() / 1000
-                // const random = Math.floor(Math.random() * 11)
                 console.log(timestamp);
-                // console.log(random);
 
                 post = {
                     id: timestamp,
