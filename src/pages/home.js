@@ -7,12 +7,12 @@ const HomePage = () => {
     const excerptList = postlist.map((post) => {
       return post.content.split(" ").slice(0, 10).join(" ")
   })
-  console.log(excerptList)
 
     return (
         <div>
           {postlist.map((post, i) => (
             <Card
+            key={post.id}
               id={post.id}
               image={post.image}
               content={excerptList[i]}

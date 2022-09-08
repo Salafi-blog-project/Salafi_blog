@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 import{Link} from "react-router-dom"
 
-const Card = ({ image, subtitle, title, date, name, content }) => {
+const Card = ({ image, subtitle, title, date, name, content, id }) => {
 
   return (
     <CardComponent>
@@ -16,7 +16,7 @@ const Card = ({ image, subtitle, title, date, name, content }) => {
           <div className="text-left	py-2 font-bold">{title}</div>
           <div className="text-left	py-2 font-normal">{subtitle}</div>
           <ReactMarkdown children={content} />
-          <Link to={`/blog/${title}`}>Read more ...</Link>
+          <Link to={`/blog/${id}`}>Read more ...</Link>
         </div>
       </DetailsContainer>
       <div className="py-4">
