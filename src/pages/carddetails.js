@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 import postlist from "../posts.json";
 
 const CardDetails = () => {
@@ -8,11 +9,23 @@ const CardDetails = () => {
   console.log("ONE POST", post);
 
   return (
-    <div>
-      <div>{post.title}</div>
+    <DetailContainer>
+      <div className="text-center text-xl font-bold py-4">{post.title}</div>
+      <div>{post.image}</div>
       <div>{post.content}</div>
-    </div>
+      <div className="py-4">
+        written by:
+        <span className="text-base font-medium"> {post.author}</span> on{" "}
+        <span>{post.date}</span>
+      </div>
+    </DetailContainer>
   );
 };
 
 export default CardDetails;
+
+const DetailContainer = styled.div`
+  padding: 4rem 8rem 4rem 7rem;
+  margin: 1rem;
+  border: 0.1rem solid;
+`;
