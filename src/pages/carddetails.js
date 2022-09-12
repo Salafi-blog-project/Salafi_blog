@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import postlist from "../posts.json";
+import ReactMarkdown from "react-markdown";
 
 const CardDetails = () => {
   const { slug } = useParams();
@@ -12,7 +13,8 @@ const CardDetails = () => {
     <DetailContainer>
       <div className="text-center text-xl font-bold py-4">{post.title}</div>
       <div>{post.image}</div>
-      <div>{post.content}</div>
+      {/* <div>{post.content}</div> */}
+      <ReactMarkdown children = {post.content}/>
       <div className="py-4">
         written by:
         <span className="text-base font-medium"> {post.author}</span> on{" "}
