@@ -1,13 +1,12 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
-import{Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Card = ({ image, subtitle, title, date, name, content, id }) => {
-
   return (
     <CardComponent>
-      <DetailsContainer className="p-5">
+      <DetailsContainer className="p-5 md:bg-blue-500 lg:bg-green-500">
         <div className="flex gap-2 py-2">
           <div className="p-2 rounded-md bg-lightblue">{name} </div>
           <div className="p-2">{date} </div>
@@ -30,7 +29,7 @@ export default Card;
 
 const CardComponent = styled.div`
   border-top: 0.1rem solid #ebf2fe;
-  margin: 2rem 0rem 6rem 1rem;
+  margin: 1rem 0rem 6rem 1rem;
   width: 60vw;
   height: 20vh;
   display: flex;
