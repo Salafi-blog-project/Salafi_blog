@@ -2,7 +2,6 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import Global from "../../global";
 
 const Card = ({ image, title, date, author, content, id }) => {
   return (
@@ -29,24 +28,20 @@ const Card = ({ image, title, date, author, content, id }) => {
 export default Card;
 
 const CardComponent = styled.div`
-  // border-top: 0.1rem solid #ebf2fe;
-  // width: 60%;
-  // height: 20vh;
-  // display: flex;
+ 
 
   @media (min-width: 320px) {
-    // background-color: blue;
     width: 100%;
-  margin: 2rem 0rem 2rem 0rem;
-   border-top: 0.1rem solid #ebf2fe;
+    margin: 2rem 0rem 2rem 0rem;
+    border-top: 0.1rem solid #ebf2fe;
   }
 
   @media (min-width: 640px) {
-    background-color: green;
   }
 
   @media (min-width: 1024px) {
-    background-color: brown;
+    border-top: 0.1rem solid #ebf2fe;
+    display: flex;
   }
 `;
 

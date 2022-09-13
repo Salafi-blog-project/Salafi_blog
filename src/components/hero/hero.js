@@ -2,24 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../constants/color";
+import NavBar from "../navbar/navbar";
 
 const HeroSection = () => {
   return (
     <HeroSectionContainer>
-      <div className="flex justify-between p-7">
-        <Link to="/" className="text-white">Salafi Blog</Link>
-        <MiddleContainer className="text-white">
-          <div>Design Tools</div>
-          <div>Daily Updates</div>
-          <Link to="/tutorials">Tutorials</Link>
-          <div>Library</div>
-        </MiddleContainer>
-        <Link to="/subscribe" className="text-white w-22 rounded-md cursor-pointer h-7 px-2 bg-slate-500">
-          Subscribe
-        </Link>
-      </div>
-      <div className="flex justify-center items-center flex-col font-bold	text-white ">
-        <div className="text-left	">As-Salaam Alaikum</div>
+      <NavBar/>
+      <div className="flex justify-center items-center flex-col font-bold	text-white py-5">
         <div className="text-3xl">
           Insights about my personal and work <br/> life, and the in-betweens
         </div>
@@ -31,14 +20,25 @@ const HeroSection = () => {
 export default HeroSection;
 
 const HeroSectionContainer = styled.div`
-  background-color: ${colors.deepblue};
-  width: 80vw;
-  height: 40vh;
-  border-radius: 0.5rem;
+
+
+  @media (min-width: 320px) {
+  }
+
+  @media (min-width: 640px) {
+  }
+
+  @media (min-width: 1024px) {
+    background-color: ${colors.deepblue};
+    width: 80vw;
+    height: 40vh;
+    border-radius: 0.5rem;
+    padding:1.5rem;
+  }
 `;
 
-const MiddleContainer = styled.div`
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-`;
+// const MiddleContainer = styled.div`
+//   width: 50%;
+//   display: flex;
+//   justify-content: space-between;
+// `;
