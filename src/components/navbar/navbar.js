@@ -20,14 +20,15 @@ const NavBarContainer = styled.div`
 display:flex;
 justify-content:space-between;
 padding:1rem;
+width:85%;
 
-// @media (min-width: 480px) {
+// @media (max-width: 480px) {
 //      flex-flow:column nowrap;
 //   }
-//   @media (min-width: 880px) {
+//   @media (max-width: 880px) {
 //     flex-flow:row nowrap;
 //  }
-//   @media (min-width: 1024px) {
+//   @media (max-width: 1024px) {
 //     flex-flow:row nowrap;
 //  }
 
