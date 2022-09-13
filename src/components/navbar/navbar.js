@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import RightNavBar from "./rightnav";
 import { Link } from "react-router-dom";
+import HarmBurger from "./harmburger";
 
 const NavBar = () => {
   return (
@@ -9,6 +10,7 @@ const NavBar = () => {
       <Link to="/" className="text-white">
         SALAFI BLOG
       </Link>
+      <HarmBurger/>
      <RightNavBar/>
     </NavBarContainer>
   );
