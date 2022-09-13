@@ -32,15 +32,11 @@ const CardComponent = styled.div`
   border-top: 0.1rem solid #ebf2fe;
   padding:2rem;
 
-  // @media (max-width: 480px) {
-  //   width: 100%;
-  //   margin: 2rem 0rem 2rem 0rem;
-  //   flex-direction: column-reverse;
-  //   border-top: 0.1rem solid #ebf2fe;
-  //   padding:2rem;
-  // }
+  @media (max-width: 480px) {
+    flex-direction: column-reverse;
+  }
 
-  // @media (min-width: 880px) {
+  // @media (max-width: 880px) {
   //   border-top: 0.1rem solid #ebf2fe;
   //   padding:2rem;
   // }

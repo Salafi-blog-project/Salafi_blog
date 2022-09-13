@@ -30,9 +30,18 @@ const FooterContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 480px) {
+
+  }
 `;
 
 const FormButtonContainer = styled.div`
   display: flex;
   padding-top: 3rem;
+
+  @media (max-width: 480px) {
+  padding: 2rem;
+    
+  }
 `;

@@ -7,8 +7,6 @@ const RightNavBar = () => {
     <Ul className="flex gap-x-10 text-white">
       <li>Aqeedah</li>
       <li>Methodology</li>
-      <li>Hadith</li>
-      <li>Tafsir</li>
       <Link to="/tutorials">About</Link>
       <Link
         to="/subscribe"
@@ -23,18 +21,18 @@ const RightNavBar = () => {
 export default RightNavBar;
 
 const Ul = styled.div`
+list-style:none;
 
-//   @media (min-width: 480px) {
+//   @media (max-width: 480px) {
 //     flex-flow:column nowrap;
-//     list-style:none;
 
 //  }
 
-//   @media (min-width: 880px) {
+//   @media (max-width: 880px) {
 //     flex-flow:row nowrap;
 //     list-style:none;
 //  }
-//   @media (min-width: 1024px) {
+//   @media (max-width: 1024px) {
 //     flex-flow:row nowrap;
 //  }
 
