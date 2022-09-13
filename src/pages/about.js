@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { blogimages } from './blogimages';
 // import { Image1, Image2, Image3, Image4 } from "../components/image";
 
-const Tutorials = () => {
+const About = () => {
 
 const [images, setImage] = useState(blogimages)
 
@@ -15,4 +15,4 @@ const [images, setImage] = useState(blogimages)
   </div>;
 };
 
-export default Tutorials;
+export default About;

@@ -13,7 +13,6 @@ const CardDetails = () => {
     <DetailContainer>
       <div className="text-center text-xl font-bold py-4">{post.title}</div>
       <div>{post.image}</div>
-      {/* <div>{post.content}</div> */}
       <ReactMarkdown children = {post.content}/>
       <div className="py-4">
         written by:
