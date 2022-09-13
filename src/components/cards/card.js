@@ -28,29 +28,33 @@ const Card = ({ image, title, date, author, content, id }) => {
 export default Card;
 
 const CardComponent = styled.div`
- 
+  display: flex;
+  border-top: 0.1rem solid #ebf2fe;
+  padding:2rem;
 
-  @media (min-width: 320px) {
-    width: 100%;
-    margin: 2rem 0rem 2rem 0rem;
-    border-top: 0.1rem solid #ebf2fe;
-  }
+  // @media (max-width: 480px) {
+  //   width: 100%;
+  //   margin: 2rem 0rem 2rem 0rem;
+  //   flex-direction: column-reverse;
+  //   border-top: 0.1rem solid #ebf2fe;
+  //   padding:2rem;
+  // }
 
-  @media (min-width: 640px) {
-  }
+  // @media (min-width: 880px) {
+  //   border-top: 0.1rem solid #ebf2fe;
+  //   padding:2rem;
+  // }
 
-  @media (min-width: 1024px) {
-    border-top: 0.1rem solid #ebf2fe;
-    display: flex;
-  }
+
+  
 `;
 
 const DetailsContainer = styled.div`
-  @media (min-width: 320px) {
+  @media (min-width: 480px) {
     width: 70%;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 880px) {
   }
 
   @media (min-width: 1024px) {
@@ -58,13 +62,13 @@ const DetailsContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  @media (min-width: 320px) {
+  @media (min-width: 480px) {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 880px) {
   }
 
   @media (min-width: 1024px) {
