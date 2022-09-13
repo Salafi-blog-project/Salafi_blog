@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 
 const RightNavBar = () => {
   return (
-    <Ul className="flex gap-x-10 text-white">
+    <Ul className="gap-x-10 text-white">
       <li>Aqeedah</li>
       <li>Methodology</li>
+      <li>Tafsir</li>
       <Link to="/tutorials">About</Link>
       <Link
         to="/subscribe"
@@ -22,16 +23,26 @@ export default RightNavBar;
 
 const Ul = styled.div`
 list-style:none;
+display: flex;
+flex-flow:row-nowrap;
 
 //   @media (max-width: 480px) {
 //     flex-flow:column nowrap;
-
 //  }
 
-//   @media (max-width: 880px) {
-//     flex-flow:row nowrap;
-//     list-style:none;
-//  }
+  @media (max-width: 880px) {
+    display:none;
+    flex-flow:column nowrap;
+    justify-content:space-between;
+    position:fixed;
+    top:0;
+    right:0;
+    height:50%;
+    width:6rem;
+    background-color:green;
+    padding-top:4rem;
+ }
+ 
 //   @media (max-width: 1024px) {
 //     flex-flow:row nowrap;
 //  }
