@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import RightNavBar from "./rightnav";
 import { Link } from "react-router-dom";
 import HarmBurger from "./harmburger";
 
@@ -11,7 +10,6 @@ const NavBar = () => {
         SALAFI BLOG
       </Link>
       <HarmBurger/>
-     <RightNavBar/>
     </NavBarContainer>
   );
 };
