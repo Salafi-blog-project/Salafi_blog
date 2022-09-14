@@ -26,7 +26,6 @@ const CardDetails = () => {
 export default CardDetails;
 
 const DetailContainer = styled.div`
-  padding: 4rem 8rem 4rem 7rem;
+  padding: 4rem 10rem 4rem 8rem;
   margin: 1rem;
-  border: 0.1rem solid;
 `;
