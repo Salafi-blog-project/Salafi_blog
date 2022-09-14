@@ -6,12 +6,12 @@ const HarmBurger = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-    <StyledHarmBurger open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
-    </StyledHarmBurger>
-    <RightNavBar open={open}/>
+      <StyledHarmBurger open={open} onClick={() => setOpen(!open)}>
+        <div />
+        <div />
+        <div />
+      </StyledHarmBurger>
+      <RightNavBar open={open} />
     </>
   );
 };
@@ -22,12 +22,11 @@ const StyledHarmBurger = styled.div`
   width: 2rem;
   height: 2rem;
   display: flex;
-  position:fixed;
-  top: 3.3rem;
-    right: 3.5rem;
- 
-  z-index:20;
-  display:none;
+  position: fixed;
+  top: 1.5rem;
+  right: 3.5rem;
+  z-index: 20;
+  display: none;
 
   @media (max-width: 880px) {
     display: flex;
