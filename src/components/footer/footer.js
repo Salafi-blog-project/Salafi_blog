@@ -32,7 +32,7 @@ const FooterContainer = styled.div`
   flex-direction: column;
 
   @media (max-width: 480px) {
-
+  width: 85%;
   }
 `;
 
@@ -41,7 +41,6 @@ const FormButtonContainer = styled.div`
   padding-top: 3rem;
 
   @media (max-width: 480px) {
-  padding: 2rem;
     
   }
 `;
