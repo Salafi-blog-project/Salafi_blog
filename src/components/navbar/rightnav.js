@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const RightNavBar = () => {
+const RightNavBar = ({ open }) => {
   return (
-    <Ul className="gap-x-10 text-white">
+    <Ul open={open} className=" text-white">
       <li>Aqeedah</li>
       <li>Methodology</li>
       <li>Tafsir</li>
@@ -22,29 +22,31 @@ const RightNavBar = () => {
 export default RightNavBar;
 
 const Ul = styled.div`
-list-style:none;
-display: flex;
-flex-flow:row-nowrap;
+  list-style: none;
+  display: flex;
+  // flex-flow: row-nowrap;
+  justify-content: space-between;
+  width:70%;
 
-//   @media (max-width: 480px) {
-//     flex-flow:column nowrap;
-//  }
+  //   @media (max-width: 480px) {
+  //     flex-flow:column nowrap;
+  //  }
 
   @media (max-width: 880px) {
-    display:none;
-    flex-flow:column nowrap;
-    justify-content:space-between;
-    position:fixed;
-    top:0;
-    right:0;
-    height:50%;
-    width:6rem;
-    background-color:green;
-    padding-top:4rem;
- }
- 
-//   @media (max-width: 1024px) {
-//     flex-flow:row nowrap;
-//  }
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    position: fixed;
+    top: 1.3rem;
+    right: 0;
+    height: 50%;
+    width: 6rem;
+    // background-color: green;
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
+    padding-top: 4rem;
+    transition: transform 0.3s ease-in-out;
+  }
 
-`
+  //   @media (max-width: 1024px) {
+  //     flex-flow:row nowrap;
+  //  }
+`;
