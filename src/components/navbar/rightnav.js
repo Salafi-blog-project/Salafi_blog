@@ -28,25 +28,18 @@ const Ul = styled.div`
   justify-content: space-between;
   width:70%;
 
-  //   @media (max-width: 480px) {
-  //     flex-flow:column nowrap;
-  //  }
-
   @media (max-width: 880px) {
     flex-flow: column nowrap;
     justify-content: space-between;
     position: fixed;
-    top: 1.3rem;
-    right: 0;
+    top: 0.3rem;
+    right: 0.2rem;
     height: 50%;
-    width: 6rem;
-    // background-color: green;
+    width: 90%;
+    background-color: #232E52;
+    border-radius:0.5rem;
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
     padding-top: 4rem;
     transition: transform 0.3s ease-in-out;
   }
-
-  //   @media (max-width: 1024px) {
-  //     flex-flow:row nowrap;
-  //  }
 `;
