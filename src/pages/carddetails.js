@@ -28,4 +28,8 @@ export default CardDetails;
 const DetailContainer = styled.div`
   padding: 4rem 10rem 4rem 8rem;
   margin: 1rem;
+
+  @media (max-width :480px) {
+  padding: 4rem 2rem 4rem 4rem;
+  }
 `;

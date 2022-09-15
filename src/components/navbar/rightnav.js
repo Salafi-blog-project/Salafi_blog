@@ -33,13 +33,14 @@ const Ul = styled.div`
     justify-content: space-between;
     position: fixed;
     top: 0.3rem;
-    right: 0.2rem;
+    right: 0;
     height: 50%;
-    width: 90%;
+    width: 100%;
     background-color: #232E52;
+    padding: 3rem 0rem 3rem 0rem;
     border-radius:0.5rem;
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
-    padding-top: 4rem;
+    text-align: center;
     transition: transform 0.3s ease-in-out;
   }
 `;
