@@ -31,6 +31,7 @@ export default Card;
 
 const CardComponent = styled.div`
   display: flex;
+  justify-content: space-between;
   border-top: 0.1rem solid #ebf2fe;
   padding:2rem;
 
