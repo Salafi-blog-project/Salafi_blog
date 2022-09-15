@@ -22,14 +22,5 @@ justify-content:space-between;
 padding:1rem;
 width:85%;
 
-// @media (max-width: 480px) {
-//      flex-flow:column nowrap;
-//   }
-//   @media (max-width: 880px) {
-//     flex-flow:row nowrap;
-//  }
-//   @media (max-width: 1024px) {
-//     flex-flow:row nowrap;
-//  }
 
 `
