@@ -11,7 +11,7 @@ const CardDetails = () => {
 
   return (
     <DetailContainer>
-      <div className="text-center text-xl font-bold py-4">{post.title}</div>
+      <div className="bg-blue-100 rounded text-center text-xl font-bold py-3">{post.title}</div>
       <div>{post.image}</div>
       <ReactMarkdown children = {post.content}/>
       <div className="py-4">
