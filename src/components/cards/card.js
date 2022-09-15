@@ -56,6 +56,8 @@ const ImageContainer = styled.div`
 `;
 
 const TitleAndDate = styled.div`
+    padding-bottom: 1rem;
+
   @media (max-width: 480px) {
     padding-bottom: 1rem;
   }
