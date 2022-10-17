@@ -1,7 +1,7 @@
 ---
 title: 'REFUTING THE FALSE PRINCIPLE: "IT IS NOT BINDING UPON ME'
 author: Lukman
-date: 2022-09-15T20:29:36.400Z
+date: Octomber 11 2022
 image: /images/room_card.svg
 ---
 **REFUTING THE FALSE PRINCIPLE: "IT IS NOT BINDING UPON ME**
