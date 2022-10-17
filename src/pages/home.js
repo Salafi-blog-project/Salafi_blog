@@ -29,7 +29,7 @@ const HomePage = () => {
                 date={post.date}
                 author={post.author}
               />
-              {/* <div className="font-bold text-3xl">Manhaj</div>
+              <div className="font-bold text-3xl">Manhaj</div>
               <Card
                 key={post.id}
                 id={post.id}
@@ -39,8 +39,8 @@ const HomePage = () => {
                 category={post.category}
                 date={post.date}
                 author={post.author}
-              /> */}
-              {/* <div className="font-bold text-3xl">Tarbiyah</div>
+              />
+              <div className="font-bold text-3xl">Tarbiyah</div>
               <Card
                 key={post.id}
                 id={post.id}
@@ -50,7 +50,7 @@ const HomePage = () => {
                 category={post.category}
                 date={post.date}
                 author={post.author}
-              /> */}
+              />
             </>
           );
         })}
