@@ -4,15 +4,13 @@ import { colors } from "../../constants/color";
 import NavBar from "../navbar/navbar";
 
 const HeroSection = ({
-  title='Insights about the salafi Aqeedah and Manhaj, this is Salafiyyah'
+  title = "Insights about the salafi Aqeedah and Manhaj, this is Salafiyyah",
 }) => {
   return (
     <HeroSectionContainer>
       <NavBar />
       <div className="flex justify-center items-center flex-col font-bold	text-white py-5">
-        <SmallText1 >
-          {title}
-        </SmallText1>
+        <SmallText1>{title}</SmallText1>
       </div>
     </HeroSectionContainer>
   );
@@ -30,14 +28,12 @@ const HeroSectionContainer = styled.div`
   @media (max-width: 880px) {
     width: 99%;
   }
+`;
 
-  `;
-  
-  const SmallText1 = styled.div`
+const SmallText1 = styled.div`
   font-size: 1.875rem;
 
-
   @media (max-width: 880px) {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
   }
-  `;
+`;
