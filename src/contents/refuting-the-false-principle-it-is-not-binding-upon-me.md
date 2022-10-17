@@ -4,9 +4,9 @@ author: Lukman
 date: 2022-09-15T20:29:36.400Z
 image: /images/room_card.svg
 ---
-REFUTING THE FALSE PRINCIPLE: "IT IS NOT BINDING UPON ME \[¹]
+**REFUTING THE FALSE PRINCIPLE: "IT IS NOT BINDING UPON ME**
 
-Al-Allãmah Al-Imãm Rabī'Bn Hãdī Al-Madkhalī (may Allãh preserve him) said:
+*Al-Allãmah Al-Imãm Rabī'Bn Hãdī Al-Madkhalī (may Allãh preserve him) said:*
 
 If two scholars from the scholars of Al-jarh wat-Ta'dīl (criticsm and praise) or other than them differ in a religious affair, then the ruling regarding the affair is for Allãh, not desire and its people who do take the word of the mistaken one and reject the word of the correct one; that which is obligatory in that which the scholars differ over in the affair of the religion is returning it to Allāh and The Messenger (صلى الله عليه وسلم). Allãh The Exalted said:
 
@@ -19,7 +19,7 @@ Verily the likes of this statement do give people the courage to reject the trut
 
 Source: \[The scholars of Al-jarh wat-Ta'dīl are the protectors of the religion, page 29–30]
 
-Notes and translation by:
+`Notes and translation by:`
 Lukmãn Bn Abdir-Rauf As-Sãlafī
 
 29th of Dhul-Qa'dah 1443AH
