@@ -1,70 +1,76 @@
-const path = require("path")
-const fs = require("fs")
-const { log } = require("console")
+const path = require("path");
+const fs = require("fs");
+const { log } = require("console");
 
-const dirPath = path.join(__dirname, "../src/contents")
-let postlist = []
+const dirPath = path.join(__dirname, "../src/contents");
+let postlist = [];
 
-const getPosts =  () => {
-     fs.readdir(dirPath, (err, files) => {
-        // console.log("there are" + files.length + "files")
-        if (err) {
-            return console.log("Failed to list contents of directory: " + err)
+const getPosts = () => {
+  fs.readdir(dirPath, (err, files) => {
+    // console.log("there are" + files.length + "files")
+    if (err) {
+      return console.log("Failed to list contents of directory: " + err);
+    }
+    console.log(files);
+    files.forEach((file, i) => {
+      let obj = {};
+      let post;
+      fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
+        const getMetadataIndices = (acc, elem, i) => {
+          if (/^---/.test(elem)) {
+            acc.push(i);
+          }
+          return acc;
+        };
+        const parseMetadata = ({ lines, metadataIndices }) => {
+          if (metadataIndices.length > 0) {
+            let metadata = lines.slice(
+              metadataIndices[0] + 1,
+              metadataIndices[1]
+            );
+            metadata.forEach((line) => {
+              obj[line.split(": ")[0]] = line.split(": ")[1];
+            });
+            return obj;
+          }
+        };
+        const parseContent = ({ lines, metadataIndices }) => {
+          if (metadataIndices.length > 0) {
+            lines = lines.slice(metadataIndices[1] + 1, lines.length);
+          }
+          return lines.join("\n");
+        };
+        const lines = contents.split("\n");
+        const metadataIndices = lines.reduce(getMetadataIndices, []);
+        const metadata = parseMetadata({ lines, metadataIndices });
+        const content = parseContent({ lines, metadataIndices });
+        const date = new Date(metadata.date);
+        const timestamp = date.getTime() / 1000;
+        // console.log(metadata.date instanceOf Date);
+        // console.log(timestamp);
+        // console.log(typeof metadata.date);
+        // console.log(new Date(metadata.date.toString()));
+
+        post = {
+          id: timestamp,
+          title: metadata.title ? metadata.title : "No title given",
+          author: metadata.author ? metadata.author : "No author given",
+          date: metadata.date ? metadata.date : "No date given",
+          image: metadata.image ? metadata.image : "No image given",
+          content: content ? content : "No content given",
+        };
+        postlist.push(post);
+        if (i === files.length - 1) {
+          const sortedList = postlist.sort((a, b) => {
+            return a.id < b.id ? 1 : -1;
+          });
+          let data = JSON.stringify(sortedList);
+          fs.writeFileSync("src/posts.json", data);
         }
-        console.log(files)
-        files.forEach((file, i) => {
-            let obj = {}
-            let post 
-            fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
-                const getMetadataIndices = (acc, elem, i) => {
-                    if (/^---/.test(elem)) {
-                        acc.push(i)
-                    }
-                    return acc
-                }
-                const parseMetadata = ({lines, metadataIndices}) => {
-                    if (metadataIndices.length > 0) {
-                        let metadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1])
-                        metadata.forEach(line => {
-                            obj[line.split(": ")[0]] = line.split(": ")[1]
-                        })
-                        return obj
-                    }
-                }
-                const parseContent = ({lines, metadataIndices}) => {
-                    if (metadataIndices.length > 0) {
-                        lines = lines.slice(metadataIndices[1] + 1, lines.length)
-                    }
-                    return (lines.join("\n"));
-                }
-                const lines = contents.split("\n")
-                const metadataIndices = lines.reduce(getMetadataIndices, [])
-                const metadata = parseMetadata({lines, metadataIndices})
-                const content = parseContent({lines, metadataIndices})
-                const date = new Date(metadata.date)
-                const timestamp = date.getTime() / 1000
-                console.log(timestamp);
+      });
+    });
+  });
+  return;
+};
 
-                post = {
-                    id: timestamp,
-                    title: metadata.title ? metadata.title : "No title given",
-                    author: metadata.author ? metadata.author : "No author given",
-                    date: metadata.date ? metadata.date : "No date given",
-                    image: metadata.image ? metadata.image : "No image given",
-                    content: content ? content : "No content given",
-                }
-                postlist.push(post)
-                if (i === files.length - 1) {
-                    const sortedList = postlist.sort ((a,b) => {
-                        return a.id < b.id ? 1 : -1
-                    })
-                    let data = JSON.stringify(sortedList)
-                    fs.writeFileSync("src/posts.json", data)
-                }
-            })
-        })
-    })
-   return
-}
-
-getPosts()
+getPosts();

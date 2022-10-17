@@ -4,7 +4,7 @@ import postlist from "../posts.json";
 
 const HomePage = () => {
   const excerptList = postlist.map((post) => {
-    return post.content.split(" ").slice(0, 10).join(" ");
+    return post.content.split(" ").slice(0, 20).join(" ");
   });
 
   return (
