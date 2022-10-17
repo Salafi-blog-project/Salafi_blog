@@ -46,15 +46,12 @@ const getPosts = () => {
         const content = parseContent({ lines, metadataIndices });
         const date = new Date(metadata.date);
         const timestamp = date.getTime() / 1000;
-        // console.log(metadata.date instanceOf Date);
-        // console.log(timestamp);
-        // console.log(typeof metadata.date);
-        // console.log(new Date(metadata.date.toString()));
 
         post = {
           id: timestamp,
           title: metadata.title ? metadata.title : "No title given",
           author: metadata.author ? metadata.author : "No author given",
+          category: metadata.category ? metadata.category : "No category given",
           date: metadata.date ? metadata.date : "No date given",
           image: metadata.image ? metadata.image : "No image given",
           content: content ? content : "No content given",

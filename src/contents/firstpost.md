@@ -3,8 +3,8 @@ name: Salafiyyah
 author: Lukman Bn Abdir-Rauf
 date: MAY 13, 2021
 title: The Salafi Aqeedah
+category: Aqeedah
 image: ./images/flower.svg
-
 ---
 
 # This is a blog post
@@ -19,11 +19,11 @@ image: ./images/flower.svg
 
 ## Overview
 
-* Follows [CommonMark](https://commonmark.org)
-* Optionally follows [GitHub Flavored Markdown](https://github.github.com/gfm/)
-* Renders actual React elements instead of using `dangerouslySetInnerHTML`
-* Lets you define your own components (to render `MyHeading` instead of `h1`)
-* Has a lot of plugins
+- Follows [CommonMark](https://commonmark.org)
+- Optionally follows [GitHub Flavored Markdown](https://github.github.com/gfm/)
+- Renders actual React elements instead of using `dangerouslySetInnerHTML`
+- Lets you define your own components (to render `MyHeading` instead of `h1`)
+- Has a lot of plugins
 
 ## Table of contents
 

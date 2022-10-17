@@ -3,18 +3,21 @@ import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Card = ({ image, title, date, author, content, id }) => {
+const Card = ({ image, title, date, author, content, id, category }) => {
   return (
     <CardComponent>
       <DetailsContainer className="p-5">
-        <TitleAndDate className="flex justify-between gap-2 w-full">
-          <div className="bg-blue-100 p-2 px-3 rounded">
-            <Link to={`/blog/${id}`} className="font-bold">
-              {title}
-            </Link>
+        <TitleAndDate className="flex justify-between w-full py-2">
+          <div className="bg-blue-100 p-2 px-3 rounded font-bold">
+            {category}
           </div>
           <div className="py-2">{date} </div>
         </TitleAndDate>
+        <div>
+          <Link to={`/blog/${id}`} className="font-bold text-3xl">
+            {title}
+          </Link>
+        </div>
         <div>
           <ReactMarkdown children={content} />
           <div>written by: {author} </div>
@@ -39,20 +42,17 @@ const CardComponent = styled.div`
 `;
 
 const DetailsContainer = styled.div`
+  width: 38rem;
+  margin-right: 20px;
+  flex-shrink: 0;
   @media (max-width: 480px) {
     width: 100%;
   }
 `;
 
-// const ImageContainer = styled.div`
-//   @media (max-width: 480px) {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
-// `;
-
 const Image = styled.img`
+  width: 18rem;
+  flex-shrink: 0;
   @media (max-width: 480px) {
     display: flex;
     justify-content: center;

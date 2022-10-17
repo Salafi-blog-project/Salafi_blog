@@ -3,6 +3,7 @@ name: Tarbiyah
 author: Shaikh AbdulAziiz Bn Baaz
 date: September 14 2022
 title: THE ISLÃMIC CULTIVATION
+category: Tarbiyah
 image: ./images/flower.svg
 ---
 
