@@ -7,18 +7,18 @@ const Card = ({ image, title, date, author, content, id, category }) => {
   return (
     <CardComponent>
       <DetailsContainer className="p-5">
-        <TitleAndDate className="flex justify-between w-full py-2">
+        <TitleAndDate className="flex justify-between w-full">
           <div className="bg-blue-100 p-2 px-3 rounded font-bold">
             {category}
           </div>
           <div className="py-2">{date} </div>
         </TitleAndDate>
-        <div>
+        <div className="py-2 ">
           <Link to={`/blog/${id}`} className="font-bold text-3xl">
             {title}
           </Link>
         </div>
-        <div>
+        <div className="py-2">
           <ReactMarkdown children={content} />
           <div>written by: {author} </div>
         </div>

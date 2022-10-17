@@ -18,7 +18,7 @@ const HomePage = () => {
           console.log(post);
           return (
             <>
-              <div>Aqeedah</div>
+              <div className="font-bold text-3xl py-2">Aqeedah</div>
               <Card
                 key={post.id}
                 id={post.id}
@@ -29,7 +29,7 @@ const HomePage = () => {
                 date={post.date}
                 author={post.author}
               />
-              <div>Manhaj</div>
+              <div className="font-bold text-3xl">Manhaj</div>
               <Card
                 key={post.id}
                 id={post.id}
@@ -40,7 +40,7 @@ const HomePage = () => {
                 date={post.date}
                 author={post.author}
               />
-              <div>Tarbiyah</div>
+              <div className="font-bold text-3xl">Tarbiyah</div>
               <Card
                 key={post.id}
                 id={post.id}
