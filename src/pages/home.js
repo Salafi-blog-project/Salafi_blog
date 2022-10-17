@@ -13,7 +13,6 @@ const HomePage = () => {
     <div>
       {postlist
         .filter((post) => post.category === "Aqeedah\r")
-        .slice(0, 3)
         .map((post, i) => {
           console.log(post);
           return (
