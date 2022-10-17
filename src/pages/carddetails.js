@@ -20,7 +20,7 @@ const CardDetails = () => {
       <ReactMarkdown children={post.content} />
       <div className="py-4">
         written by:
-        <span className="text-base font-medium"> {post.author}</span> on{" "}
+        <span className="text-base font-medium"> {post.author}</span> on
         <span>{post.date}</span>
       </div>
     </DetailContainer>
@@ -39,9 +39,11 @@ const DetailContainer = styled.div`
 `;
 
 const DetailsImage = styled.img`
+  object-fit: cover;
   width: 70vw;
   height: 20vh;
 `;
+
 const DetailsImageContainer = styled.div`
   display: flex;
   justify-content: center;

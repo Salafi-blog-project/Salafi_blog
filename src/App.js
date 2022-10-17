@@ -8,27 +8,23 @@ import About from "./pages/about";
 import HomePage from "./pages/home";
 
 function App() {
- 
-
   return (
     <div className="flex justify-center items-center flex-col my-1">
-        <BrowserRouter>
-        <HeroSection />        
+      <BrowserRouter>
+        <HeroSection />
         <Routes>
-          <Route path='/' element={<HomePage/>}/>
-          <Route path="/blog/:slug" element={<CardDetails />}/>            
-          <Route path="/subscribe" element={<Subscribe />}/> 
-          <Route path="/about" element={<About/>}/>
-          <Route path="/test" element={(
-            <div>test page</div>
-          )}/>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog/:slug" element={<CardDetails />} />
+          <Route path="/subscribe" element={<Subscribe />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/test" element={<div>test page</div>} />
         </Routes>
         <FooterSection
           subscribe="Subscribe to my blog."
           content="I post fresh content every week."
         />
-    </BrowserRouter>
-      </div>
+      </BrowserRouter>
+    </div>
   );
 }
 
