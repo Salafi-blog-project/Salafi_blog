@@ -6,11 +6,14 @@ import CardDetails from "./pages/carddetails";
 import Subscribe from "./pages/subscribe";
 import About from "./pages/about";
 import HomePage from "./pages/home";
+import NavBar from "./components/navbar/navbar";
+import SignUpPage from "./components/signup/signup";
 
 function App() {
   return (
     <div className="flex justify-center items-center flex-col my-1">
       <BrowserRouter>
+        <NavBar />
         <HeroSection />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -23,6 +26,7 @@ function App() {
           subscribe="Subscribe to my blog."
           content="I post fresh content every week."
         />
+        <SignUpPage />
       </BrowserRouter>
     </div>
   );
