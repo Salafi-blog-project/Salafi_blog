@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <NavBarContainer>
       <Link to="/" className="text-black text-2xl font-extrabold">
-        SALAFI BLOG
+        Info Hive
       </Link>
       <HarmBurger />
     </NavBarContainer>
