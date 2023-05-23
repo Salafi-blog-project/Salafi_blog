@@ -19,7 +19,7 @@ const SignUpPage = () => {
   console.log(formData);
   return (
     <SignUpPageContainer>
-      <div>
+      <div className="hidden sm:block">
         <h1 className="font-extrabold text-4xl text-white">
           Join Our Community
         </h1>

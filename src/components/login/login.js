@@ -38,9 +38,10 @@ const LogInPage = () => {
   return (
     <LogInPageContainer>
       <LogInForm>
-        <h2>Log In</h2>
+        <h2 className="text-center text-2xl font-bold py-2">Log In</h2>
         <InputField>
           <label htmlFor="email">Email</label>
+          <br />
           <input
             type="text"
             id="email"
