@@ -6,10 +6,10 @@ import HarmBurger from "./harmburger";
 const NavBar = () => {
   return (
     <NavBarContainer>
-      <Link to="/" className="text-white">
+      <Link to="/" className="text-black text-2xl font-extrabold">
         SALAFI BLOG
       </Link>
-      <HarmBurger/>
+      <HarmBurger />
     </NavBarContainer>
   );
 };
@@ -17,10 +17,8 @@ const NavBar = () => {
 export default NavBar;
 
 const NavBarContainer = styled.div`
-display:flex;
-justify-content:space-between;
-padding:1rem;
-width:85%;
-
-
-`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 85%;
+`;

@@ -1,69 +1,30 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Card = ({ image, title, date, author, content, id, category }) => {
   return (
-    <CardComponent>
-      <DetailsContainer className="p-5">
-        <TitleAndDate className="flex justify-between w-full">
-          <div className="bg-blue-100 p-2 px-3 rounded font-bold">
-            {category}
-          </div>
-          <div className="py-2">{date} </div>
-        </TitleAndDate>
-        <div className="py-2 ">
-          <Link to={`/blog/${id}`} className="font-bold text-3xl">
-            {title}
-          </Link>
+    <div className="flex flex-col lg:flex-row border-t border-blue-100 p-4 lg:p-6">
+      <div className="w-full lg:w-3/5 lg:pr-4">
+        <div className="bg-blue-100 p-2 px-3 rounded font-bold mb-2">
+          {category}
         </div>
-        <div className="py-2">
+        <h2 className="text-3xl font-bold mb-2">
+          <p>{title}</p>
+        </h2>
+        <div className="mb-2">
           <ReactMarkdown children={content} />
-          <div>written by: {author} </div>
         </div>
-      </DetailsContainer>
-      <Image src={image} alt="" />
-    </CardComponent>
+        <div className="font-bold mb-2">Written by: {author}</div>
+        <div className="text-gray-500">{date}</div>
+      </div>
+      <div className="w-full lg:w-2/5">
+        <Link to={`/blog/${id}`}>
+          <img src={image} alt="" className="w-full" />
+        </Link>
+      </div>
+    </div>
   );
 };
 
 export default Card;
-
-const CardComponent = styled.div`
-  display: flex;
-  justify-content: space-between;
-  border-top: 0.1rem solid #ebf2fe;
-  padding: 2rem;
-
-  @media (max-width: 480px) {
-    flex-direction: column-reverse;
-  }
-`;
-
-const DetailsContainer = styled.div`
-  width: 38rem;
-  margin-right: 20px;
-  flex-shrink: 0;
-  @media (max-width: 480px) {
-    width: 100%;
-  }
-`;
-
-const Image = styled.img`
-  width: 18rem;
-  flex-shrink: 0;
-  @media (max-width: 480px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-const TitleAndDate = styled.div`
-  padding-bottom: 1rem;
-
-  @media (max-width: 480px) {
-    padding-bottom: 1rem;
-  }
-`;
