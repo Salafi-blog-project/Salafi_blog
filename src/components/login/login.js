@@ -38,9 +38,12 @@ const LogInPage = () => {
   return (
     <LogInPageContainer>
       <LogInForm>
-        <h2>Log In</h2>
+        <h2 className="text-center text-2xl font-bold py-2">Log In</h2>
         <InputField>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="font-bold">
+            Email
+          </label>
+          <br />
           <input
             type="text"
             id="email"
@@ -50,7 +53,9 @@ const LogInPage = () => {
           />
         </InputField>
         <InputField>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="font-bold">
+            Password
+          </label>
           <input
             type="password"
             id="password"
