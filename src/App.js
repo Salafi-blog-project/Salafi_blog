@@ -1,5 +1,5 @@
 import "./App.css";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HeroSection from "./components/hero/hero";
 import FooterSection from "./components/footer/footer";
 import CardDetails from "./pages/carddetails";
@@ -13,7 +13,7 @@ import LogInPage from "./components/login/login";
 function App() {
   return (
     <div className="flex justify-center items-center flex-col my-1">
-      <Router>
+      <BrowserRouter>
         <NavBar />
         <HeroSection />
         <Routes>
@@ -30,7 +30,7 @@ function App() {
           content="I post fresh content every week."
         />
         {/* <SignUpPage /> */}
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
