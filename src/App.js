@@ -9,6 +9,7 @@ import HomePage from "./pages/home";
 import NavBar from "./components/navbar/navbar";
 import SignUpPage from "./components/signup/signup";
 import LogInPage from "./components/login/login";
+import GetPostList from "./components/getpostlist";
 
 function App() {
   return (
@@ -24,12 +25,12 @@ function App() {
           <Route path="/test" element={<div>test page</div>} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LogInPage />} />
+          <Route path="/getpostlist" element={<GetPostList />} />
         </Routes>
         <FooterSection
           subscribe="Subscribe to my blog."
           content="I post fresh content every week."
         />
-        {/* <SignUpPage /> */}
       </BrowserRouter>
     </div>
   );

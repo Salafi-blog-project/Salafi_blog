@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { auth, googleProvider } from "../../config/firebase.js";
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -9,14 +15,44 @@ const SignUpPage = () => {
     confirmPassword: "",
   });
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
       [e.target.name]: e.target.value,
     }));
-  }
+  };
 
-  console.log(formData);
+  const signUp = async (e) => {
+    try {
+      e.preventDefault();
+      const email = formData.email;
+      const password = formData.password;
+      await createUserWithEmailAndPassword(auth, email, password);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const accSignOut = async (e) => {
+    try {
+      e.preventDefault();
+      await signOut(auth);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const googleSignUp = async (e) => {
+    try {
+      e.preventDefault();
+      await signInWithPopup(auth, googleProvider);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  console.log(auth?.currentUser?.email);
+
   return (
     <SignUpPageContainer>
       <div className="hidden sm:block">
@@ -77,7 +113,9 @@ const SignUpPage = () => {
           />
         </InputField>
 
-        <SignUpButton>Sign Up</SignUpButton>
+        <SignUpButton onClick={signUp}>Sign Up</SignUpButton>
+        <SignOutButton onClick={accSignOut}>Sign Out</SignOutButton>
+        <GoogleButton onClick={googleSignUp}>Sin up with google</GoogleButton>
       </SignUpForm>
     </SignUpPageContainer>
   );
@@ -119,5 +157,35 @@ const SignUpButton = styled.button`
 
   &:hover {
     background-color: #002171;
+  }
+`;
+
+const SignOutButton = styled.button`
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #b92c36;
+  }
+`;
+
+const GoogleButton = styled.button`
+  background-color: #db4437;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #c53929;
   }
 `;
