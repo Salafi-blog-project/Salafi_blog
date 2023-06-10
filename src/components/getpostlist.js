@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../config/firebase.js";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, addDoc } from "firebase/firestore";
 import styled from "styled-components";
 
 const GetPostList = () => {
@@ -8,20 +8,21 @@ const GetPostList = () => {
 
   const getPostRef = collection(db, "posts");
 
+  const getPostList = async () => {
+    try {
+      const data = await getDocs(getPostRef);
+      const filteredData = data.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setPostList(filteredData);
+      console.log(filteredData);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   useEffect(() => {
-    const getPostList = async () => {
-      try {
-        const data = await getDocs(getPostRef);
-        const filteredData = data.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
-        setPostList(filteredData);
-        console.log(filteredData);
-      } catch (err) {
-        console.error(err);
-      }
-    };
     getPostList();
   }, []);
 
@@ -30,7 +31,7 @@ const GetPostList = () => {
   const [newFormData, setNewFormData] = useState({
     title: "",
     author: "",
-    // date: new Date(),
+    date: 0,
     content: "",
     isFavourite: false,
   });
@@ -46,10 +47,31 @@ const GetPostList = () => {
     }));
   };
 
+  const onSubmitPost = async (e) => {
+    try {
+      e.preventDefault();
+      const title = newFormData.title;
+      const author = newFormData.author;
+      const content = newFormData.content;
+      const isFavourite = newFormData.isFavourite;
+      const date = newFormData.date;
+      await addDoc(getPostRef, {
+        title: title,
+        author: author,
+        content: content,
+        isFavourite: isFavourite,
+        date: date,
+      });
+      getPostList();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
-    <div className="bg-gray-200 p-4">
+    <div className="bg-gray-200 p-4 mx-auto max-w-5xl sm:mx-0">
       {postList.map((post) => (
-        <div className="bg-white p-6 rounded-lg shadow-md space-y-4">
+        <div className="bg-white p-6 rounded-lg shadow-md space-y-4 mx-auto max-w-2xl sm:w-full">
           <h1
             className={`font-bold text-2xl text-center ${
               post.favourite ? "text-green-500" : "text-red-500"
@@ -62,7 +84,7 @@ const GetPostList = () => {
             <p className="text-gray-500">Written by: {post.author}</p>
             <p className="text-gray-500">Date: {post.date}</p>
           </div>
-          <form className="p-20">
+          <form className="mx-auto max-w-2xl sm:w-full flex flex-col justify-center items-center">
             <legend className="font-bold text-lg text-center py-2">
               Write your article here
             </legend>
@@ -91,7 +113,8 @@ const GetPostList = () => {
                 value={newFormData.author}
               />
             </InputField>
-            {/* <InputField>
+
+            <InputField>
               <label htmlFor="date">Date</label>
               <input
                 type="date"
@@ -102,7 +125,7 @@ const GetPostList = () => {
                 onChange={handleChange}
                 value={newFormData.date}
               />
-            </InputField> */}
+            </InputField>
 
             <InputField>
               <label htmlFor="content">Content</label>
@@ -130,7 +153,10 @@ const GetPostList = () => {
                 value={newFormData.isFavourite}
               />
             </InputField>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button
+              onClick={onSubmitPost}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
               Post
             </button>
           </form>

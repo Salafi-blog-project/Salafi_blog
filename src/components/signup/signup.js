@@ -77,6 +77,7 @@ const SignUpPage = () => {
             placeholder="Full Name"
             onChange={handleChange}
             className="border-2 p-4 rounded-md"
+            value={formData.fullname}
           />
         </InputField>
         <InputField>
@@ -88,6 +89,7 @@ const SignUpPage = () => {
             placeholder="Email"
             onChange={handleChange}
             className="border-2 p-4 rounded-md"
+            value={formData.email}
           />
         </InputField>
         <InputField>
@@ -99,6 +101,7 @@ const SignUpPage = () => {
             placeholder="Password"
             onChange={handleChange}
             className="border-2 p-4 rounded-md"
+            value={formData.password}
           />
         </InputField>
         <InputField>
@@ -110,6 +113,7 @@ const SignUpPage = () => {
             placeholder="Confirm Password"
             onChange={handleChange}
             className="border-2 p-4 rounded-md"
+            value={formData.confirmPassword}
           />
         </InputField>
 
