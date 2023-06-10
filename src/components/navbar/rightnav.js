@@ -54,10 +54,9 @@ const RightNavBar = ({ open }) => {
     <NavContainer open={open}>
       <Ul>
         <li>Aqeedah</li>
-        <li>Methodology</li>
 
         <li>
-          <StyledLink to="/tutorials">About</StyledLink>
+          <StyledLink to="/getpostlist">Get Posts</StyledLink>
         </li>
         <li>
           <StyledLink to="/subscribe">Subscribe</StyledLink>
@@ -67,6 +66,9 @@ const RightNavBar = ({ open }) => {
         </li>
         <li>
           <StyledLink to="/login">LogIn</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/tutorials">About</StyledLink>
         </li>
       </Ul>
     </NavContainer>
